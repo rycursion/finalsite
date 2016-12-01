@@ -56,15 +56,15 @@ body{
           <a class="mdl-navigation__link" href="{% url 'gcom:xcart' %}">Cart</a>
 	 	</nav>
 	</div>
-<h1><center>List of Games</center></h1>
+<h1><center>Available Games</center></h1>
 
 <div class="content_1">
 	<div style="width: 100%;overflow:auto;">
 	   <div style="float:left; width: 80%">
   		<div class=".content_1">
 			
-			<br>
-			<h2>Here are the available games:</h2>
+			
+			
 			<br>
 			<ul id="itemsToFilter">
             {% for prod in p_list %}
@@ -88,15 +88,15 @@ body{
     <h3><li>
         <strong>Show:</strong>
 	<br><br>
-        <input checked="true" type="checkbox" value="ACTION"/>
+        <input checked="true" type="checkbox" value="Action"/>
         <label>ACTION</label>
     </li>
     <li>
-        <input checked="true" type="checkbox" value=""/>
+        <input checked="true" type="checkbox" value="Sports"/>
         <label>SPORT</label>
     </li>
     <li>
-        <input checked="true" type="checkbox" value="STRATEGY"/>
+        <input checked="true" type="checkbox" value="Strategy"/>
         <label>STRATEGY</label>
     </li>
 </h2>
