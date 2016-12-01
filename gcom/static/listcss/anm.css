@@ -1,0 +1,170 @@
+body {
+background: url(background.jpg);
+-moz-background-size: cover;
+-webkit-background-size: cover;
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+color: #ffbf00;
+}
+
+.content_1 {
+padding-top: 20px;
+padding-bottom: 50px;
+padding-right: 50px;
+padding-left: 50px;
+}
+
+ul.products li {
+    width: 350px;
+    display: inline-block;
+    vertical-align: top;
+    *display: inline;
+    *zoom: 1;
+}
+
+.center-justified {
+  text-align: justify;
+  margin: 0 auto;
+  width: 700px;
+}
+
+
+header {
+	width: 800px;
+	margin: 40px auto;
+}
+ 
+
+
+#container{
+	width: 1000px;
+	overflow: hidden;
+	margin: 50px auto;
+	background: white;
+}
+ 
+.photobanner {
+	height: 233px;
+	width: 3550px;
+	margin-bottom: 80px;
+}
+.first {
+	-webkit-animation: bannermove 30s linear infinite;
+	   -moz-animation: bannermove 30s linear infinite;
+	    -ms-animation: bannermove 30s linear infinite;
+	     -o-animation: bannermove 30s linear infinite;
+	        animation: bannermove 30s linear infinite;
+}
+ 
+@keyframes "bannermove" {
+ 0% {
+    margin-left: 0px;
+ }
+ 100% {
+    margin-left: -2125px;
+ }
+ 
+}
+ 
+@-moz-keyframes bannermove {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+ 
+}
+ 
+@-webkit-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+ 
+}
+ 
+@-ms-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+ 
+}
+ 
+@-o-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -2125px;
+ }
+ 
+}
+
+.photobanner img:hover {
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+.photobanner img {
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+.filterSection li {
+    
+    list-style: none;
+    margin: 0px;
+    padding: 5px;
+    
+     
+}
+.filterSection {
+    margin: 0px;
+    padding: 0px;
+    	
+}
+#itemsToFilter li {
+    list-style: none;
+    
+    background-position: 0 3px;
+    background-repeat: no-repeat;
+    margin: 15px;
+    padding-left: 40px;
+   
+}
+
+#itemsToFilter li[data-type=ACTION] {
+    background-image: url("http://www.kirupa.com/mini_icons/entypo/small_leaf.png");
+}
+  
+#itemsToFilter li[data-type=SPORTS] {
+    background-image: url("http://www.kirupa.com/mini_icons/entypo/small_plane.png");
+}
+ 
+#itemsToFilter li[data-type=STRATEGY] {
+    background-image: url("http://www.kirupa.com/mini_icons/entypo/small_megaphone.png");
+}
+
+.showItem {
+    display: list-item;
+}
+.hideItem {
+    display: none;
+}
+
+
+       

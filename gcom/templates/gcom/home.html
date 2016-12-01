@@ -1,0 +1,96 @@
+{% load staticfiles %}
+<html>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<script src=" {% static 'homecss/material.min.js' %}"></script>
+<link rel="stylesheet" href="{% static 'homecss/material.min.css' %}">
+
+
+<link rel="stylesheet" href="{% static 'homecss/home.css'%}">
+
+<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue_grey-orange.min.css" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Audiowide" />
+<style>
+h1{font-family: "Audiowide", cursive;}
+h2{font-family: "Audiowide", cursive;}
+h3{font-family: "Audiowide", cursive;}
+body{
+     font-family: "Audiowide", cursive;
+     font-size: 20px;
+     }
+</style>
+
+
+
+
+<title>Homepage</title>
+
+</head>
+
+<body background="black.jpg">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+  <header class="mdl-layout__header"></header>
+
+
+  <div class="mdl-layout__drawer">
+
+    
+    <nav class="mdl-navigation">
+
+      <a class="mdl-navigation__link" href="./">Home</a>
+      <a class="mdl-navigation__link" href="./cart">Cart</a>
+ 
+     <a class="mdl-navigation__link" href="./list">List Of Games</a>
+ 
+     <a class="mdl-navigation__link" href="./contact">Contact</a>
+   </nav>
+ 
+ </div>
+
+
+
+<main class="mdl-layout__content">
+
+<div class="page-content">
+<br>
+
+<h1><center><i>"Gamers Don't Die, They Respawn.."</i></center></h1>
+<div id="container">
+ 
+   <header>
+	    <b><center><h2>Games available<h2>
+</center></b>
+    </header>
+    <br>
+    <div class="photobanner">
+    	<img class="first" src="image-1.jpg" alt="" />
+        <img src="{% static 'homecss/1.jpg' %}" alt="" height="750px" />
+        <img src="{% static 'homecss/2.jpg' %}" alt="" height="750px"/>
+        <img src="{% static 'homecss/3.jpg' %}" alt="" height="750px"/>
+        <img src="{% static 'homecss/4.jpg' %}" alt="" height="750px"/>
+        <img src="{% static 'homecss/5.jpg' %}" alt="" height="750px"/>
+        <img src="{% static 'homecss/6.jpg' %}" alt="" height="750px"/>
+        <img src="{% static 'homecss/7.jpg' %}" alt="" height="750px"/>
+        <img src="{% static 'homecss/8.jpg' %}" alt="" height="750px"/>
+        <img src="{% static 'homecss/9.jpg' %}" alt="" height="750px"/>
+        <img src="{% static 'homecss/10.jpg' %}" alt="" height="750px"/>
+        <img src="{% static 'homecss/11.jpg' %}" alt="" height="750px"/>
+        <img src="{% static 'homecss/12.jpg' %}" alt="" height="750px"/>
+        <img src="{% static 'homecss/13.jpg' %}" alt="" height="750px"/>
+        <img src="{% static 'homecss/14.jpg' %}" alt="" height="750px"/>
+        <img src="{% static 'homecss/15.jpg' %}" alt="" height="750px"/>
+        <img src="{% static 'homecss/16.jpg' %}" alt="" height="750px"/>
+        <img src="{% static 'homecss/17.jpg' %}" alt="" height="750px"/>
+
+
+
+    </div>
+</div><center>
+<a href='list/'><button class="button" style="vertical-align:middle"><span>Lets Buy</span></button></a>
+</center>
+ </main>
+</div>
+</body>
+</html>

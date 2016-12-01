@@ -1,0 +1,169 @@
+﻿
+
+
+#container {
+	width: 1000px auto;
+	margin: 60px auto;
+	background: black;
+}
+
+header {
+	width: 800px;
+	margin: 40px auto;
+}
+
+
+header h1 {
+	text-align: center;
+	font: 100 60px/1.5 	
+}
+
+
+header p {
+	font: 100 15px/1.5 text-align: justify;
+}
+
+
+/*photobanner*/
+
+.photobanner {
+	height: 750px;
+	width: 10000px;
+	margin-bottom: 00px;
+}
+
+/*keyframe animations*/
+.first {
+	-webkit-animation: bannermove 30s linear infinite;
+	   -moz-animation: bannermove 30s linear infinite;
+	    -ms-animation: bannermove 30s linear infinite;
+	     -o-animation: bannermove 30s linear infinite;
+	        animation: bannermove 30s linear infinite;
+}
+
+@keyframes "bannermove" {
+ 0% {
+    margin-left: 0px;
+ }
+ 100% {
+    margin-left: -7500px;
+ }
+
+}
+
+@-moz-keyframes bannermove {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -15000px;
+ }
+
+}
+
+@-webkit-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -7500px;
+ }
+
+}
+
+@-ms-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -7500px;
+ }
+
+}
+
+@-o-keyframes "bannermove" {
+ 0% {
+   margin-left: 0px;
+ }
+ 100% {
+   margin-left: -7500px;
+ }
+
+}
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+
+.button span
+ {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+
+.button span:after
+ {
+  content: '>>';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+body {
+  background: url('./black.jpg');
+-moz-background-size: cover;
+-webkit-background-size: cover;
+overflow: hidden;
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
+color: #ffbf00 ;
+}
+ul.products li {
+    width: 250px;
+    display: inline-block;
+    vertical-align: top;
+    *display: inline;
+    *zoom: 1;
+}
+
+.center-justified {
+  text-align: justify;
+  margin: 0 auto;
+  width: 700px;
+}
+
+img {
+    filter: alpha(opacity=50); 
+}
+
+img:hover {
+    transform: scale(1.1);
+    filter: alpha(opacity=100); 
+}

@@ -1,0 +1,186 @@
+{% load staticfiles %}
+<html>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="{% static 'listcss/material.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'listcss/anm.css' %}" />
+<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue_grey-orange.min.css" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Audiowide" />
+<script src="{% static 'listcss/material.min.js' %}"></script>
+
+<style>
+div.img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 320px;
+}
+
+div.img:hover {
+    border: 1px solid #777;
+}
+
+div.img img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+h1{font-family: "Audiowide", cursive;}
+h2{font-family: "Audiowide", cursive;}
+h3{font-family: "Audiowide", cursive;}
+body{
+     font-family: "Audiowide", cursive;
+     font-size: 20px;
+     }
+</style>
+
+
+
+
+
+<title>List</title>
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	<header class="mdl-layout__header">
+	</header>
+	<div class="mdl-layout__drawer">
+    
+ 		<nav class="mdl-navigation">
+		  <a class="mdl-navigation__link" href="{% url 'gcom:home' %}">Home</a>
+		  <a class="mdl-navigation__link" href="{% url 'gcom:contact' %}">Contact</a>
+          <a class="mdl-navigation__link" href="{% url 'gcom:xcart' %}">Cart</a>
+	 	</nav>
+	</div>
+<h1><center>List of Games</center></h1>
+
+<div class="content_1">
+	<div style="width: 100%;overflow:auto;">
+	   <div style="float:left; width: 80%">
+  		<div class=".content_1">
+			
+			<br>
+			<h2>Here are the available games:</h2>
+			<br>
+			<ul id="itemsToFilter">
+            {% for prod in p_list %}
+				<li data-type={{prod.genre}}>
+                <div class="img">
+				  <a target="_blank" href="{% url 'gcom:product' prod.id %}">
+				  <img src="/static/listcss/{{prod.id}}.jpg" alt="Fjords" width="320" height="450">
+				  </a>
+				  <div class="desc">{{prod.name}}</div>
+			</div></li>
+			{% endfor %}</ul>
+
+		 </div>
+	   </div>
+	  
+    
+<div style="float:middle">
+
+<h1>FILTER</h1>
+<ul class="filterSection">
+    <h3><li>
+        <strong>Show:</strong>
+	<br><br>
+        <input checked="true" type="checkbox" value="ACTION"/>
+        <label>ACTION</label>
+    </li>
+    <li>
+        <input checked="true" type="checkbox" value=""/>
+        <label>SPORT</label>
+    </li>
+    <li>
+        <input checked="true" type="checkbox" value="STRATEGY"/>
+        <label>STRATEGY</label>
+    </li>
+</h2>
+</ul>
+</div>
+</div> 
+
+ </div>  
+<script>
+ // get all of our list items
+var itemsToFilter = document.querySelectorAll("#itemsToFilter li");
+  
+//setup click event handlers on our checkboxes
+var checkBoxes = document.querySelectorAll(".filterSection li input");
+  
+for (var i = 0; i < checkBoxes.length; i++) {
+    checkBoxes[i].addEventListener("click", filterItems, false);
+    checkBoxes[i].checked = true;
+}
+  
+// the event handler!
+function filterItems(e) {
+    var clickedItem = e.target;
+      
+    if (clickedItem.checked == true) {
+        hideOrShowItems(clickedItem.value, "hideItem", "showItem");
+    } else if (clickedItem.checked == false) {
+        hideOrShowItems(clickedItem.value, "showItem", "hideItem");
+    } else {
+        // deal with the indeterminate state if needed
+    }
+}
+  
+// add or remove classes to show or hide our content
+function hideOrShowItems(itemType, classToRemove, classToAdd) {
+    for (var i = 0; i < itemsToFilter.length; i++) {
+        var currentItem = itemsToFilter[i];
+          
+        if (currentItem.getAttribute("data-type") == itemType) {
+            removeClass(currentItem, classToRemove);
+            addClass(currentItem, classToAdd);
+        }
+    }
+}
+  
+//
+// Helper functions for adding and removing class values
+//
+function addClass(element, classToAdd) {
+    var currentClassValue = element.className;
+        
+    if (currentClassValue.indexOf(classToAdd) == -1) {
+        if ((currentClassValue == null) || (currentClassValue === "")) {
+            element.className = classToAdd;
+        } else {
+            element.className += " " + classToAdd;
+        }
+    }
+}
+        
+function removeClass(element, classToRemove) {
+    var currentClassValue = element.className;
+  
+    if (currentClassValue == classToRemove) {
+        element.className = "";
+        return;
+    }
+  
+    var classValues = currentClassValue.split(" ");
+    var filteredList = [];
+  
+    for (var i = 0 ; i < classValues.length; i++) {
+        if (classToRemove != classValues[i]) {
+            filteredList.push(classValues[i]);
+        }
+    }
+  
+    element.className = filteredList.join(" ");
+}
+ 
+</script>
+		</div>
+	   </div>   
+	</div>
+</div>
+</body>
+</html>

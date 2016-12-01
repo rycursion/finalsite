@@ -1,0 +1,141 @@
+{% load staticfiles %}
+<html>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Audiowide" />
+<script src="{% static 'gamepagecss/material.min.js' %}"></script>
+<link rel="stylesheet" href="{% static 'gamepagecss/material.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'gamepagecss/anm.css' %}" />
+<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue_grey-orange.min.css" />
+<title>Game Page</title>
+<style>
+h1{font-family: "Audiowide", cursive;}
+h2{font-family: "Audiowide", cursive;}
+h3{font-family: "Audiowide", cursive;}
+h4{font-family: "Audiowide", cursive;}
+h5{font-family: "Audiowide", cursive;}
+body{
+     font-family: "Audiowide", cursive;
+     font-size: 20px;
+     }
+
+.mySlides {display:none}
+.demo {cursor:pointer}
+div.ex1 {
+    text-align:right;
+    padding: 0px 100px 0px 0px;
+}
+</style>
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+  </header>
+
+  <div class="mdl-layout__drawer">
+    
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="home">Home</a>
+      <a class="mdl-navigation__link" href="list">List Of Games</a>
+      <a class="mdl-navigation__link" href="contact">Contact</a>
+    </nav>
+  </div>
+<main class="mdl-layout__content">
+<div class="page-content" style="padding-left:75px;">
+ <div class="mdl-grid">
+ <div class="mdl-cell mdl-cell--5-col">
+
+<!-- EDIT --> <h1> <font color="#ffbf00">Name</font> </h1>
+
+<!-- EDIT --> <img style="vertical-align:top" src="/static/gamepagecss/{{product.id}}.jpg" height=550px width=400px>
+
+ <br>
+ <h1> <font color="#ffbf00">Gameplay</font> </h1>
+<div class="w3-container">
+<div class="w3-content" style="max-width:1200px">
+
+<!-- EDIT -->  <img class="mySlides" src="/static/gamepagecss/{{product.id}}-1.jpg" style="width:100%">
+<!-- EDIT -->  <img class="mySlides" src="/static/gamepagecss/{{product.id}}-2.jpg" style="width:100%">
+<!-- EDIT -->  <img class="mySlides" src="/static/gamepagecss/{{product.id}}-3.jpg" style="width:100%">
+
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col s4">
+
+<!-- EDIT -->      <img class="demo w3-opacity w3-hover-opacity-off" src="/static/gamepagecss/{{product.id}}-1.jpg" style="width:100%" onclick="currentDiv(1)">
+
+    </div>
+    <div class="w3-col s4">
+
+<!-- EDIT -->      <img class="demo w3-opacity w3-hover-opacity-off" src="/static/gamepagecss/{{product.id}}-2.jpg" style="width:100%" onclick="currentDiv(2)">
+
+    </div>
+    <div class="w3-col s4">
+
+<!-- EDIT -->      <img class="demo w3-opacity w3-hover-opacity-off" src="/static/gamepagecss/{{product.id}}-3.jpg" style="width:100%" onclick="currentDiv(3)">
+    </div>
+  </div>
+</div>
+</div> 
+ </div>
+ <div class="mdl-cell mdl-cell--7-col">
+<h1><font color="#ffbf00"> Description</font> </h1><div class="content">
+ <div class="FixedHeightContainer"><font color="white"><p> 
+<!-- EDIT --> <p>{{product.description}}</p>
+</font>
+</div> </div><font color="#ffbf00"><h2> Rating </h2>
+<h3>{{product.rating}}</h3></font>
+
+ <br>
+ <h2><font color="#ffbf00"> Cost </font></h2>
+
+<p></p> <h3><font color="#ffbf00">{{product.price}}</font></h3>
+
+<br><br><br><br><br>
+ <div class="ex1"><a href="{% url 'gcom:aproduct' product.id %}">
+ <button class="button" style="vertical-align:middle" onclick="added()"><span> <h5>Add to Cart</h5> </span></button> </a>
+ <br><br><a href="{% url 'gcom:xcart' %}">
+ <button class="button" style="vertical-align:middle"><span> <h5>Proceed to Cart </h5> </span></button></a>
+<br><br><a href="{% url 'gcom:list' %}">
+ <button class="button" style="vertical-align:middle"><span> <h5>Back to List </h5> </span></button></a>
+</frame>
+</div>
+ </div>
+
+ </div>
+</div>
+</div>
+</main>
+</div>
+ <script>
+ function added(){ alert( "Item Added to Cart" ); }
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-opacity-off";
+}
+ </script>
+</body>
+</html>

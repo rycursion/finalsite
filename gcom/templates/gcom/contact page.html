@@ -1,0 +1,79 @@
+{% load staticfiles %}
+<html>
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+<script src="{% static 'gamepagecss/material.min.js' %}"></script>
+<link rel="stylesheet" href="{% static 'gamepagecss/material.min.css' %}">
+
+<link rel="stylesheet" type="text/css" href="{% static 'gamepagecss/anm.css' %}" />
+<link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.blue_grey-orange.min.css" />
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Audiowide" />
+
+<title>CONTACT US</title>
+<style>
+h1{font-family: "Audiowide", cursive;}
+h2{font-family: "Audiowide", cursive;}
+h3{font-family: "Audiowide", cursive;}
+body{
+     font-family: "Audiowide", cursive;
+     font-size: 20px;
+     }
+
+.mySlides {display:none}
+.demo {cursor:pointer}
+div.ex1 {
+    text-align:right;
+    padding: 0px 100px 0px 0px;
+}
+</style>
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+  </header>
+  <div class="mdl-layout__drawer">
+    
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="{% url 'gcom:home' %}">Home</a>
+      <a class="mdl-navigation__link" href="{% url 'gcom:list' %}">List of Games</a>
+          <a class="mdl-navigation__link" href="{% url 'gcom:xcart' %}">Cart</a>
+    </nav>
+  </div>
+  <h1 align="center"><font color="#ffbf00"> CONTACT US</font> </h1>
+<main class="mdl-layout__content">
+  <div class="page-content" style="padding-left:75px">
+    <div style="width: 100%;overflow:auto;"> 
+      <div style="float:left; width: 50%">
+        
+
+<br><br>
+<h1 align="left">
+<h3><font color="#ffbf00"><u> Project Heads </u></font></h3>
+ <h5><font color="#ffbf00"><b>Chaitanya</b> : chaitanya16027@iiitd.ac.in</font></h5>
+<h5><font color="#ffbf00"><b>Anmol</b> : anmol16012@iiitd.ac.in</font></h5>
+<h5><font color="#ffbf00"><b>Rahul</b> : rahul16181@iiitd.ac.in</font></h5>
+<br>
+<h3><font color="#ffbf00"><u> Web Desiger </u></font></h3>
+<h5><font color="#ffbf00"><b>Ayush</b> : ayush16024@iiitd.ac.in</font></h5><br>
+<h3><font color="#ffbf00"><u> Members </u></font></h3>
+<h5><font color="#ffbf00"><b>Saksham</b> : saksham16085@iiitd.ac.in</font></h5>
+<h5><font color="#ffbf00"><b>Nilay</b> : nilay16063@iiitd.ac.in</font></h5>
+<h5><font color="#ffbf00"><b>Shreedhar</b> : shreedhar16197@iiitd.ac.in</font></h5>
+<h5><font color="#ffbf00"><b>Aakash</b> : aakash16125@iiitd.ac.in</font></h5><br>
+</h1>
+            </div>
+        <div style="float:right; width: 50%">
+        <br><br><br><br>
+            <iframe align="right" 
+              src="https://docs.google.com/forms/d/e/1FAIpQLSeHGZuiTMGhFqMYDSSwE0_8fA17blRYR9sET6D4PcPbDMn8kA/viewform?embedded=true" width="760" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+    </div>
+  </div>>
+ </div>
+
+</main>
+</div>
+ </body>
+</html>
